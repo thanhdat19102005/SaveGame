@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bd5d5e9082f134948905d8910a065fca
+timeCreated: 1517231319
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110382
+  packageName: Save Game
+  packageVersion: 1.0
+  assetPath: Assets/SaveGame/Scene/Scene1.unity
+  uploadId: 226873

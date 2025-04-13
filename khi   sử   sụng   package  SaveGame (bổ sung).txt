@@ -1,0 +1,28 @@
+khi   sử   sụng   package  SaveGame (bổ sung)   :  khi    visual   chạy thì     file (String  json)  sẽ  được đọc   từ  đường   dẫn   lên    từ  ổ đĩa   và  chuyển  đổi thành  Object    //Đọc toàn bộ nội dung của tệp JSON từ đường dẫn trả về bởi phương thức GetPath()
+ string json = File.ReadAllText(GetPath());
+ data = JsonUtility.FromJson<DataState>(json);
++  khi  lưu   dữ  liệu thì  Object  sẽ  chuyển   thành  file   (String  json) rồi  lưu  xuống  theo đường  dẫn 
+   // string json = JsonUtility.ToJson(data,true);
+
+
+Package  SaveGame dữ  liệu nào   trùng   key  thì    value    ghi  đè  lên  , còn  không  trùng  key  add  vào    cái  mới 
+
+ static void ReplaceItem(string name, string item)
+{
+    foreach (var entry in data.items)
+    {
+        if (entry.Key == name)
+        {
+            entry.Value = item;
+            SaveToDisk();
+            return;
+        }
+    }
+    data.items.Add(new SaveData(name, item));
+    SaveToDisk();
+}
+------------------------------
+  public static void SetString(string name, string val)
+  {
+      ReplaceItem(name, val);
+  }
